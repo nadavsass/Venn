@@ -1,0 +1,13 @@
+<div class="container" *ngIf="photos != null">
+    <div *ngFor="let page of getPages(metadata?.pages)" (click)="selectPage(page)">
+        {{page}}
+    </div>
+    <div class="">
+   <div *ngFor="let photo of photos" style="margin-top: 2%; margin-right: 2%">
+      <img class="col-sm-6 col-md-4 col-lg-3 mt-4" style="margin: 0 auto;height:230px" [src]="photo.imageUrl" [alt]="photo.title"/>
+    </div>
+    </div>
+  </div>
+
+
+  

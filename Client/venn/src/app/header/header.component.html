@@ -1,0 +1,23 @@
+<h2 class="text-center">
+  My Images
+</h2>
+
+  <div class="form-flex-container">       
+    <div style="margin:0px auto">
+        <form [formGroup]="searchForm" class="col-md-4 col-md-offset-4 row" >
+             <input #searchValue class="search-box" formControlName="search" type="text" required>
+        </form>
+     </div>
+     <br><br> 
+     <div class="row">
+        <div class="col-sm-6">
+          <button class="btn pull-right" (click)="saveTerm(searchValue.value)">Save Term On Previous Search</button>
+        </div>
+      <div class="col-sm-6">
+        <button class="btn pull-left" (click)="saveResults(searchValue.value)">Save Page Results On Local Storage</button>
+      </div>
+    </div>
+     <div *ngFor="let term of getTerms(terms)" (click)="searchTerm(term)">
+       {{term}}
+     </div>
+  </div>
